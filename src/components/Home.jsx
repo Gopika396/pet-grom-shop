@@ -1,4 +1,5 @@
 import React from "react";
+import getImg from "../utils/getImg.js";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -6,7 +7,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bb-navbar sticky-top">
       <div className="container">
         <Link className="navbar-brand bb-brand" to="/">
-          <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+          <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
           <span>
             Bark <b>&</b> Bubble
             <small>HAPPY PETS CLUB</small>
@@ -56,7 +57,7 @@ function Footer() {
         <div className="row g-4 align-items-start">
           <div className="col-lg-4">
             <Link className="navbar-brand bb-brand footer-brand" to="/">
-              <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+              <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
               <span>
                 Bark <b>&</b> Bubble
                 <small>HAPPY PETS CLUB</small>
@@ -175,7 +176,7 @@ export default function Home() {
               <div className="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                 <div className="hero-art">
                   <div className="hero-photo-wrap">
-                    <img className="hero-photo" src="/images/hero.jpg" alt="Freshly groomed fluffy dog" />
+                    <img className="hero-photo" src={getImg("hero.jpg")} alt="Freshly groomed fluffy dog" />
                   </div>
                   <div className="hero-sticker sticker-yellow">
                     <i className="bi bi-stars"></i>
@@ -247,7 +248,7 @@ export default function Home() {
             <div className="row align-items-center g-5">
               <div className="col-lg-6" data-aos="fade-right">
                 <div className="feature-image">
-                  <img src="/images/dogs-together.jpg" alt="Two happy dogs spending time together" />
+                  <img src={getImg("dogs-together.jpg")} alt="Two happy dogs spending time together" />
                   <div className="feature-note">
                     <i className="bi bi-heart-fill"></i>
                     <span>All the care.<br />None of the stress.</span>

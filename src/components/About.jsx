@@ -1,4 +1,5 @@
 import React from "react";
+import getImg from "../utils/getImg.js";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -6,7 +7,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bb-navbar sticky-top">
       <div className="container">
         <Link className="navbar-brand bb-brand" to="/">
-          <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+          <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
           <span>Bark <b>&</b> Bubble<small>HAPPY PETS CLUB</small></span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bbNav" aria-controls="bbNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +36,7 @@ function Footer() {
         <div className="row g-4 align-items-start">
           <div className="col-lg-4">
             <Link className="navbar-brand bb-brand footer-brand" to="/">
-              <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+              <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
               <span>Bark <b>&</b> Bubble<small>HAPPY PETS CLUB</small></span>
             </Link>
             <p className="footer-copy mt-3">Big smiles, wagging tails, and fresh-from-the-salon fluff. Good grooming days start here.</p>
@@ -86,7 +87,7 @@ export default function About() {
             <div className="row align-items-center g-5">
               <div className="col-lg-6" data-aos="fade-right">
                 <div className="about-image">
-                  <img src="/images/about.jpg" alt="Happy golden dog" />
+                  <img src={getImg("about.jpg")} alt="Happy golden dog" />
                   <span className="image-badge"><i className="bi bi-heart-fill"></i> Pets first. Always.</span>
                 </div>
               </div>

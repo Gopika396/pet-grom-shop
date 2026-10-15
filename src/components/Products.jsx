@@ -1,4 +1,5 @@
 import React from "react";
+import getImg from "../utils/getImg.js";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -6,7 +7,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bb-navbar sticky-top">
       <div className="container">
         <Link className="navbar-brand bb-brand" to="/">
-          <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+          <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
           <span>Bark <b>&</b> Bubble<small>HAPPY PETS CLUB</small></span>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bbNav" aria-label="Toggle navigation">
@@ -35,7 +36,7 @@ function Footer() {
         <div className="row g-4">
           <div className="col-lg-4">
             <Link className="navbar-brand bb-brand footer-brand" to="/">
-              <img className="brand-logo" src="/logo.png" alt="Bark & Bubble logo" />
+              <img className="brand-logo" src={`${import.meta.env.BASE_URL}logo.png`} alt="Bark & Bubble logo" />
               <span>Bark <b>&</b> Bubble<small>HAPPY PETS CLUB</small></span>
             </Link>
             <p className="footer-copy mt-3">Big smiles, wagging tails, and fresh-from-the-salon fluff.</p>
@@ -51,12 +52,12 @@ function Footer() {
 }
 
 const products = [
-  { id: 1, name: "Cloud Nine Shampoo", category: "Bath time", price: 499, color: "blue", img: "/images/product-shampoo.jpg", label: "BEST SELLER" },
-  { id: 2, name: "Zoomies Grooming Brush", category: "Coat care", price: 349, color: "yellow", img: "/images/product-brush.jpg", label: "PET PARENT PICK" },
-  { id: 3, name: "Paw Butter Balm", category: "Paw care", price: 299, color: "coral", img: "/images/product-balm.jpg", label: "LITTLE LUXURY" },
-  { id: 4, name: "Snuggle Dry Towel", category: "Bath time", price: 599, color: "blue", img: "/images/product-towel.jpg", label: "SOFT & FLUFFY" },
-  { id: 5, name: "Fresh Breath Spray", category: "Daily care", price: 279, color: "coral", img: "/images/product-spray.jpg", label: "QUICK FRESHEN" },
-  { id: 6, name: "Happy Paws Comb", category: "Coat care", price: 399, color: "yellow", img: "/images/product-comb.jpg", label: "GROOMER FAVE" },
+  { id: 1, name: "Cloud Nine Shampoo", category: "Bath time", price: 499, color: "blue", img: "product-shampoo.jpg", label: "BEST SELLER" },
+  { id: 2, name: "Zoomies Grooming Brush", category: "Coat care", price: 349, color: "yellow", img: "product-brush.jpg", label: "PET PARENT PICK" },
+  { id: 3, name: "Paw Butter Balm", category: "Paw care", price: 299, color: "coral", img: "product-balm.jpg", label: "LITTLE LUXURY" },
+  { id: 4, name: "Snuggle Dry Towel", category: "Bath time", price: 599, color: "blue", img: "product-towel.jpg", label: "SOFT & FLUFFY" },
+  { id: 5, name: "Fresh Breath Spray", category: "Daily care", price: 279, color: "coral", img: "product-spray.jpg", label: "QUICK FRESHEN" },
+  { id: 6, name: "Happy Paws Comb", category: "Coat care", price: 399, color: "yellow", img: "product-comb.jpg", label: "GROOMER FAVE" },
 ];
 
 export default function Products() {
@@ -113,7 +114,7 @@ export default function Products() {
                 <div className="col-sm-6 col-lg-4" key={product.id} data-aos="fade-up" data-aos-delay={(index % 3) * 70}>
                   <article className="product-card">
                     <div className={`product-image product-${product.color}`}>
-                      <img src={product.img} alt={product.name} />
+                      <img src={getImg(product.img)} alt={product.name} />
                       <span className="product-label">{product.label}</span>
                     </div>
                     <div className="product-info">
