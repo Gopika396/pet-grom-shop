@@ -20,10 +20,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--bb-ink);
   background: #fff;
   font-family: "Poppins", sans-serif;
@@ -348,6 +350,7 @@ h2 span {
   position: relative;
   display: grid;
   min-height: 470px;
+  padding: 62px 0;
   place-items: center;
 }
 
@@ -391,16 +394,16 @@ h2 span {
 }
 
 .sticker-yellow {
-  top: 40px;
-  right: -2px;
+  top: 0;
+  right: 8%;
   background: var(--bb-yellow);
   color: var(--bb-navy);
   transform: rotate(7deg);
 }
 
 .sticker-blue {
-  bottom: 45px;
-  left: -14px;
+  bottom: 0;
+  left: 8%;
   background: var(--bb-blue);
   color: var(--bb-navy);
   transform: rotate(-7deg);
@@ -413,13 +416,13 @@ h2 span {
 }
 
 .sparkle-one {
-  top: 30px;
-  left: 40px;
+  top: 6px;
+  left: 6%;
 }
 
 .sparkle-two {
-  right: 18px;
-  bottom: 42px;
+  right: 6%;
+  bottom: 6px;
   color: var(--bb-yellow);
 }
 
@@ -589,8 +592,11 @@ h2 span {
 
 .feature-note,
 .image-badge {
-  position: absolute;
+  position: static;
   display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 14px 0 0;
   align-items: center;
   gap: 12px;
   padding: 17px 20px;
@@ -604,18 +610,12 @@ h2 span {
   line-height: 1.15;
 }
 
-.feature-note {
-  right: -12px;
-  bottom: 35px;
-}
-
 .feature-note i {
   font-size: 1.7rem;
 }
 
+
 .image-badge {
-  bottom: 35px;
-  left: -12px;
   background: var(--bb-coral);
   color: #fff;
 }
@@ -1499,26 +1499,6 @@ h2 span {
     height: 345px;
   }
 
-  .sticker-yellow {
-    top: 18px;
-    right: -3px;
-  }
-
-  .sticker-blue {
-    bottom: 22px;
-    left: -3px;
-  }
-
-  .sparkle-one {
-    top: 18px;
-    left: 0;
-  }
-
-  .sparkle-two {
-    right: 0;
-    bottom: 14px;
-  }
-
   .hero-proof {
     gap: 9px;
   }
@@ -1541,11 +1521,6 @@ h2 span {
   .feature-image img,
   .about-image img {
     height: 330px;
-  }
-
-  .feature-note {
-    right: -3px;
-    bottom: 22px;
   }
 
   .page-hero {
